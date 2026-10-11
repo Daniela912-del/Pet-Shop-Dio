@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f8f5">
+    <title>Pet Shop | Máquina de Banho</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app-shell">git config user.name "Seu nome"
+git config user.email "Seu e-mail"
+git commit -m "Add pet shop Java and web project"
+git push -u origin main
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Pet Shop, início">
+                <span class="brand-mark" aria-hidden="true">🐾</span>
+                <span>pet<span class="brand-highlight">shop</span></span>
+            </a>
+            <span class="topbar-label"><span class="online-dot"></span> Painel da máquina</span>
+        </header>
+
+        <section class="page-heading" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">CUIDADO DE UM JEITO MAIS FÁCIL</p>
+                <h1 id="page-title">Máquina de banho</h1>
+                <p class="subtitle">Acompanhe os produtos e cuide do banho do seu pet.</p>
+            </div>
+            <div class="heading-paw" aria-hidden="true">🐶</div>
+        </section>
+
+        <section class="dashboard" aria-label="Painel da máquina de banho">
+            <div class="main-column">
+                <article class="card machine-card">
+                    <div class="card-heading">
+                        <div>
+                            <p class="eyebrow">VISÃO GERAL</p>
+                            <h2>Status da máquina</h2>
+                        </div>
+                        <span id="machine-status" class="status-pill status-clean">
+                            <span class="status-dot"></span> Limpa
+                        </span>
+                    </div>
+
+                    <div class="machine-illustration" aria-hidden="true">
+                        <div class="machine-window">
+                            <span class="window-shine"></span>
+                            <span id="pet-emoji" class="machine-pet">🐶</span>
+                        </div>
+                        <div class="machine-body">
+                            <span class="machine-brand">PET WASH</span>
+                            <span class="machine-controls"><i></i><i></i><i></i></span>
+                        </div>
+                        <span class="machine-leg leg-left"></span>
+                        <span class="machine-leg leg-right"></span>
+                    </div>
+
+                    <div class="pet-status">
+                        <span class="pet-avatar" aria-hidden="true">🐾</span>
+                        <div class="pet-info">
+                            <span class="detail-label">PET NA MÁQUINA</span>
+                            <strong id="pet-name">Nenhum pet</strong>
+                        </div>
+                        <span id="pet-status-badge" class="pet-status-badge">Aguardando</span>
+                    </div>
+                </article>
+
+                <article class="card supplies-card">
+                    <div class="card-heading">
+                        <div>
+                            <p class="eyebrow">RECURSOS</p>
+                            <h2>Produtos disponíveis</h2>
+                        </div>
+                        <span class="capacity-label">Capacidade máxima</span>
+                    </div>
+
+                    <div class="supply-list">
+                        <div class="supply-item">
+                            <span class="supply-icon water-icon" aria-hidden="true">💧</span>
+                            <div class="supply-content">
+                                <div class="supply-title">
+                                    <strong>Água</strong>
+                                    <span><b id="water-value">30</b> / 30</span>
+                                </div>
+                                <div class="progress-track" role="progressbar" aria-label="Nível de água" aria-valuemin="0" aria-valuemax="30" aria-valuenow="30" id="water-progress">
+                                    <span class="progress-fill water-fill"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-icon shampoo-icon" aria-hidden="true">🧴</span>
+                            <div class="supply-content">
+                                <div class="supply-title">
+                                    <strong>Shampoo</strong>
+                                    <span><b id="shampoo-value">10</b> / 10</span>
+                                </div>
+                                <div class="progress-track" role="progressbar" aria-label="Nível de shampoo" aria-valuemin="0" aria-valuemax="10" aria-valuenow="10" id="shampoo-progress">
+                                    <span class="progress-fill shampoo-fill"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="card actions-card" aria-labelledby="actions-title">
+                <p class="eyebrow">CONTROLE</p>
+                <h2 id="actions-title">O que vamos fazer?</h2>
+                <p class="actions-description">Escolha uma ação para continuar.</p>
+
+                <form id="pet-form" class="pet-form">
+                    <label for="pet-input">Nome do pet</label>
+                    <div class="input-row">
+                        <input id="pet-input" name="pet" type="text" maxlength="40" placeholder="Ex.: Mel" autocomplete="off">
+                        <button class="button button-primary" type="submit">Colocar</button>
+                    </div>
+                </form>
+
+                <div class="action-list">
+                    <button class="button button-secondary" id="status-button" type="button">
+                        <span class="button-icon" aria-hidden="true">📊</span>
+                        <span>Ver status</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="button button-secondary" id="check-pet-button" type="button">
+                        <span class="button-icon" aria-hidden="true">🔎</span>
+                        <span>Verificar pet na máquina</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="button button-secondary" id="bath-button" type="button">
+                        <span class="button-icon" aria-hidden="true">🚿</span>
+                        <span>Dar banho</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="button button-secondary" id="remove-button" type="button">
+                        <span class="button-icon" aria-hidden="true">🐾</span>
+                        <span>Remover pet</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="action-divider"></div>
+                    <button class="button button-secondary" id="water-button" type="button">
+                        <span class="button-icon" aria-hidden="true">💧</span>
+                        <span>Abastecer água</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="button button-secondary" id="shampoo-button" type="button">
+                        <span class="button-icon" aria-hidden="true">🧴</span>
+                        <span>Abastecer shampoo</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="button button-secondary" id="clean-button" type="button">
+                        <span class="button-icon" aria-hidden="true">✨</span>
+                        <span>Limpar máquina</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="button button-secondary exit-button" id="exit-button" type="button">
+                        <span class="button-icon" aria-hidden="true">👋</span>
+                        <span>Sair</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                </div>
+            </aside>
+        </section>
+
+        <div id="message" class="message" role="status" aria-live="polite">
+            <span class="message-icon" aria-hidden="true">✨</span>
+            <span id="message-text">Tudo pronto para começar. Escolha uma ação.</span>
+        </div>
+
+        <footer class="footer">Feito com carinho para os melhores amigos 🐾</footer>
+    </main>
+</body>
+</html>
